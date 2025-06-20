@@ -1,0 +1,85 @@
+import java.util.*;
+class matrix{
+	public static void main(String args[]){
+	int r1,c1,r2,c2,i,j,k,ch;
+	int a[][]=new int[10][10];
+	int b[][]=new int[10][10];
+	int c[][]=new int[10][10];
+	Scanner s1=new Scanner (System.in);
+	do{
+	System.out.println("select your choice:");
+	System.out.println("1]multplication");
+	System.out.println("2]transpose");
+	System.out.println("3]exit");
+	ch=s1.nextInt();
+	switch(ch){
+	case 1:
+		System.out.println("enter size of first matrix:");
+		r1=s1.nextInt();
+		c1=s1.nextInt();
+		System.out.println("enter size of second matrix:");
+		r2=s1.nextInt();
+		c2=s1.nextInt();
+		if(c1==r2){
+			System.out.println("matrix multiplication is possible");
+			System.out.println("enter the elements of first matrix:");
+			for(i=0;i<r1;i++){
+				for(j=0;j<c1;j++){
+					a[i][j]=s1.nextInt();
+				}
+			}
+			System.out.println("enter the elements of second matrix:");
+			for(i=0;i<r2;i++){
+				for(j=0;j<c2;j++){
+					b[i][j]=s1.nextInt();
+				}
+			}
+			for(i=0;i<r1;i++){
+				for(j=0;j<c2;j++){
+					c[i][j]=0;
+					for(k=0;k<c1;k++){
+						c[i][j]=c[i][j]+a[i][k]*b[k][j];
+					}
+				}
+			}
+			System.out.println("product of two matrices");
+			for(i=0;i<r1;i++){
+				for(j=0;j<c2;j++){
+					System.out.print(c[i][j]+" ");
+				}
+				System.out.println("");
+			}
+		}
+		
+		else{
+			System.out.println("multiplication is not possible");
+			
+		}
+		break;
+	case 2:	
+		System.out.println("enter size of  matrix:");
+		r1=s1.nextInt();
+		c1=s1.nextInt();
+		System.out.println("enter the elements of  matrix:");
+			for(i=0;i<r1;i++){
+				for(j=0;j<c1;j++){
+					a[i][j]=s1.nextInt();
+				}
+			}
+		System.out.println("transpose is:");
+		for(i=0;i<r1;i++){
+			for(j=0;j<c1;j++){
+				System.out.print(a[j][i]+ " ");
+			}
+			System.out.println("");
+		}
+		break;
+	case 3:
+		System.exit(0);
+		
+}
+}
+while(ch!=3);
+}
+}
+
