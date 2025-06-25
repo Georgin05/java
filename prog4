@@ -1,0 +1,64 @@
+ import java.util.*;
+
+
+class Tele {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        int n;
+        Television t[] = new Television[100];
+
+
+        System.out.println("Enter the number of televisions:");
+        n = s.nextInt();
+
+
+        for (int i = 0; i < n; i++) {
+            t[i] = new Television();
+            t[i].setvalues();
+        }
+
+
+        for (int i = 0; i < n; i++) {
+            t[i].display();
+        }
+    }
+}
+
+
+class Television {
+    String make;
+    int size;
+    String date;
+    boolean colour;
+
+
+    Scanner s1 = new Scanner(System.in);
+
+
+    void setvalues() {
+        System.out.println("Enter the company name:");
+        make = s1.next();
+
+
+        System.out.println("Enter the size of TV:");
+        size = s1.nextInt();
+
+
+        System.out.println("Enter the date of purchase:");
+        date = s1.next();
+
+
+        System.out.println("Enter if it is colour or not (true/false):");
+        colour = s1.nextBoolean();
+    }
+
+
+    void display() {
+        System.out.println("Details of TV:");
+        System.out.println("************");
+        System.out.println("COMPANY: " + make);
+        System.out.println("SIZE: " + size);
+        System.out.println("Date of Purchase: " + date);
+        System.out.println("Colour: " + colour);
+    }
+}
